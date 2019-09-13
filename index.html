@@ -1,182 +1,341 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>jQuery Workshop</title>
+<!doctype html>
 
-    <!--  CSS  -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+<html lang="en">
 
+<head>
 
-    <!--  JAVASCRIPT  -->
-    <!-- jquery should go here! -->
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-  </head>
+    <meta charset="utf-8">
 
-  <body>
-    <div class="jumbotron">
-      <h1>jQuery Workshop</h1>
-      <p>The one and only.</p>
-      <hr>
-    </div>
-    <div class="container-narrow">
-      <section>
-        <h1>Getting started</h1>
-        <p>You're going to be working on your own github fork of this website</p>
-        <ol>
-          <li>Download a copy of this workshop <a href="workshop.zip">over here</a>. Open the index.html file up in your browser.</li>
-          <li>Write your answers in the <i>main.js</i> file in the <i>js</i> directory. You ARE allowed to modify the html too...</li>
-          <li><strong>If your code is not working, the first place to look for problems is in the <a href="https://developers.google.com/chrome-developer-tools/docs/console" target="_blank">javascript console</a> in your web inspector.</strong></li>
-          <li>Google it if stuck. There's a ton of <a href="http://api.jquery.com/" target="_blank">documentation on jQuery</a></li>
-        </ol>
-      </section>
-      <hr>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <section>
-        <h1>Exercise 0: Setup</h1>
-        <p>Oh dear...it appears I've forgotten to include jQuery in this page. Can you link it in for me?</p>
-        <p>If you see a jquery logo under this line, then you have passed this exercise:</p>
-        <img id="jquery-powered" src="img/jquery.png" width=200>
-      </section>
-      <hr>
+    <meta name="description" content="">
 
-      <section>
-        <h1>Exercise 1: Remember remember</h1>
-        <p>Hmmm, this button doesn't work. I swore it did!! Hmm....<br> Where's the first place you should look when stuff doesn't work in javascript?</p>
-        <button class="btn btn-large btn-danger" type="button">Click me</button>
-      </section>
-      <hr>
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 
-      <section>
-        <h1>Exercise 2: Buttons!</h1>
-        <p>Ok let's make the button actually do something.</p>
-        <button id="exercise2Button" class="btn btn-large btn-primary" type="button">Click me</button>
-        <p><strong>Make it so that when you click on the button, an alert message pops up.</strong></p>
-        <p>It can say anything you want, but it should probably be motivating, funny, charming, and with a dash of wit.</p>
-      </section>
-      <hr>
+    <meta name="generator" content="Jekyll v3.8.5">
 
-      <section>
-        <h1>Exercise 3: Web Wizardry</h1>
-        <h3>&ldquo;Fade out&rdquo; spell</h3>
-        <p>Harry Potter is having a guest over, and wants to make his embarassing collection of dolls disappear. Can you help him?</p>
-        <p>Make it so that when you click on the button, the dolls <strong>fade out</strong>.</p>
-        <center>
-          <img src="img/harry.png">
-          <button id="disappear" class="btn btn-info" type="button">&ldquo;Evanesco!&rdquo;</button>
-          <img class="dolls" width="300" src="img/dolls.jpg">
-        </center>
+    <title>Hanna Lavén</title>
 
-        <h3>&ldquo;Fade in&rdquo; spell</h3>
-        <p>Harry Potter is finally alone again wants to make his dolls come back. How does he do that?</p>
-        <p>Make it so that when you click on the button below, the dolls <strong>fade in</strong>.</p>
-        <center>
-          <img src="img/harry.png">
-          <button id="appear" class="btn btn-info" type="button">&ldquo;Appearo!&rdquo;</button>
-          <img class="dolls" style="display: none" width="300" src="img/dolls.jpg">
-        </center>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
 
-        <h3>&ldquo;Transformation&rdquo; spell</h3>
-        <p>Voldemort is trying to ruin Princess Madeleine's wedding!!!! OH NO!.</p>
-        <p>Make it so that when you click on the button below, Voldemort <strong>fades out</strong>, and then <strong>fades into</strong> a cute bunch of cats</strong>.</p>
-        <small>(Hint: Look at the code where the image of Voldemort is. You will need the 2 "spells" you used above)</small>
-        <img width="400" src="img/madeleine.jpg">
-        <center>
-          <img src="img/harry.png">
-          <button id="transform" class="btn btn-info" type="button">&ldquo;Felinicus!&rdquo;</button>
-          <img id="voldemort" width="400" src="img/voldemort.jpg">
-          <!-- These are the cats. They are hidden by default, but should be faded in after Voldemort is faded out. -->
-          <img id="cats" width="400" style="display:none" src="img/cats.jpg">
-        </center>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <h3>&ldquo;Hover&rdquo; spell</h3>
-        <p>Oh look, it's <a href="http://en.wikipedia.org/wiki/Carola_H%C3%A4ggkvist" target="_blank">Carola!.</a></p>
-        <p>During the finale at Carola's most recent concert, Harry Potter has promised to make her levitate.</p>
-        <p>But he's fed up of pressing buttons. He wants it so when you <strong>hover</strong> your mouse over the button, Carola will levitate. When you take your mouse off the button (called "hovering off") she should stop levitating.</p>
-        <small>(Hint: To make Carola levitate, add the class <code>levitating</code> to the <code>img</code> of her. To make her stop, remove that class.)</small>
-        <br>
-        <small>(Hint: Look at JQuery documentation for adding/removing classes.)</small>
-        <br>
-        <small>(Hint: You aren't using <code>click</code> anymore. You will use <code>hover</code>)</small>
-        <center>
-          <img src="img/harry.png">
-          <button id="levitate" class="btn btn-inverse" type="button">&ldquo;Wingardium Leviosa&rdquo;</button>
-          <img id="carola" width="300" src="img/carola.png">
-          <!-- These are the cats. They are hidden by default, but should be faded in after Voldemort is faded out. -->
-          <img width="400" style="display:none" src="img/cats.jpg">
-        </center>
-      </section>
-      <hr>
+    <div class="hero-image">
 
-      <section>
-        <h1>Exercise 4: What the hell is that good for?</h1>
-        <p>Ok I get it. You might not need to make Carola levitate on every website you make...</p>
-        <p>So let's pretend you just started a webshop selling steak, bourbon and diapers.</p>
-        <p>Make it so when you <strong>hover</strong> over each image, the product description is displayed</p>
-        <small>(Hint: All the product descriptions are in the HTML, but are hidden. You should fade in the one corresponding to the image you are hovering on.)</small>
-        <div class="row-fluid text-center">
-          <div class="span4">
-            <img id="steak" class="product" src="img/steak.jpg">
-          </div>
-          <div class="span4">
-            <img id="bourbon" class="product" src="img/bourbon.jpg">
-          </div>
-          <div class="span4">
-            <img id="diapers" class="product" src="img/diapers.gif">
-          </div>
+        <div class="hero-text">
+
+            <h1>DIGITAL ANALYS</h1>
+
+            <p>Hanna Lavén</p>
+
         </div>
-        <br>
-        <div id="steak-description" class="product-description text-center">
-          <h2>High quality steak</h2>
-          <p>Delicious steak infused with the hint of lemon and roadkill.</p>
-        </div>
-        <div id="bourbon-description" class="product-description text-center">
-          <h2>Special Juice</h2>
-          <p>Perfect for any occasion. Filtered through old leather bound books to get permeated with the sensual flavours of elderly musk.</p>
-        </div>
-        <div id="diapers-description" class="product-description text-center">
-          <h2>Diapers</h2>
-          <p>Soft fluffy pillows for your body.</p>
-        </div>
-      </section>
-      <hr>
-
-      <section>
-        <h1>Exercise 5: Shopping Cartz</h1>
-        <p id="cart"><i class="icon-shopping-cart"></i>&nbsp;Your cart (<span id="cart-quantity">0</span> items)</p>
-        <p>Wow! This site is a store!? What can I buy!? <strong>IKEA HOTDOGS*</strong></p>
-        <img src="img/hotdog.jpg">
-        <button id="add-to-cart" class="btn btn-large btn-success" type="button">Add to cart</button>
-        <ol>
-          <li>There is a function in the javascript file called <code>addToCart</code>. Make it so when you click the 'Add to cart' button, it calls that function. You know you got it right if in your javascript console, it says <code>added an item!</code> each time you press the button.</li>
-          <li>Modify the <code>addToCart</code> function so that when you press the button, the <img src="img/cart.png"> fades out and in. This gets the user's attention and shows them that something was added.</li>
-          <li>Modify the <code>addToCart</code> function so that when you press the button, the number of items in the cart is updated. The variable <code>numItems</code> represents the number of items in the cart. The html for the cart needs to be updated with this number.</li>
-        </ol>
-        <small>* Like the <a href="http://theranaplaza.com/" target="_blank">The Rana Plaza</a>, you won't get anything you buy on this website.&Dagger;</small>
-        <br>
-        <small>&Dagger; But this time, nothing is donated to charity.</small>
-      </section>
-      <hr>
-
-      <section>
-        <h1>Exercise 6: Using Plugins</h1>
-        <p>If you want to create an animation, effect, or UI component, chances are pretty good that someone has done the work for you already. These are called jQuery plugins, and they can be added to your site. <a href="http://plugins.jquery.com/" target="_blank"> Here's</a> a good place to look for plugins. </p>
-        <p>For this exercise, we are going to use a plugin called <a href="http://bxslider.com/" target="_blank">bxSlider</a>. It allows you to have a nice looking carousel on your page. See an example <a href="http://bxslider.com/examples/image-slideshow-captions" target="_blank"> here.</a> </p>
-        <p>Follow the instructions on the bxslider homepage for installing the plugin. The effect should be that the wonderful gifs below will be in a slideshow (only one gif shown at a time). Like <a href="http://bxslider.com/examples/image-slideshow-captions" target="_blank"> this example.</a></p>
-        <ul class="bxslider">
-          <li><img src="img/pic1.gif"/></li>
-          <li><img src="img/pic2.gif"/></li>
-          <li><img src="img/pic3.gif"/></li>
-          <li><img src="img/pic4.gif"/></li>
-          <li><img src="img/pic5.gif"/></li>
-        </ul>
-      </section>
-      <hr>
 
     </div>
 
-  </body>
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+        
+        h2 {
+            color: black;
+        }
+      
+        
+        .small-image {
+            position: relative;
+            left: 50%;
+            margin-left: -75px;
+            margin-bottom: 15%;
+        }
+      
+        
+        .spacing {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+     
+        
+        .dark-button {
+            background-color: #333;
+        }
+        
+        .dark-button:hover {
+            background-color: rgb(48, 134, 220);
+            border: none; 
+        }
+           
+        .hero-image {
+            background-image: linear-gradient(rgba(0.5, 0.5, 0, 0), rgba(0, 0, 0, 0.5)), url(http://www.nordiskand.se/bilder/tjanster/Neon_Diod_Nordiska_ND1.jpg);
+            height: 60%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+        
+        .col-lg-4 {
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+        
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+        
+        body {
+            background-color: #1111;
+        }
+        
+        .col-md-5 img {
+            width: 430px;
+            height: 430px;
+            border-radius: 0%
+        }
+        
+        .col-md-5 text {
+            padding-top: 50px;
+            margin-top: 50px;
+        }
+        
+        .col-md-7 text {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+     
+        
+        @media (max-width: 1200px) {
+            .col-md-5 img {
+                width: 350px;
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 1000px) {
+            .col-md-5 img {
+                width: 280px;
+                height: 280px;
+            }
+        }
+    
+        
+        @media (max-width: 767px) {
+            .col-md-5 {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <!-- Custom styles -->
+
+    <link href="carousel.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    </div>
+
+    </nav>
+
+    </header>
+
+    <main role="main">
+
+
+
+
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+
+            <div class="row">
+
+                <div class="col-lg-4">
+
+                    <img class="small-image" src="https://i.etsystatic.com/20336343/d/il/e81755/1941728259/il_340x270.1941728259_1353.jpg?version=0">
+
+                    <h2>Kampanjanalys</h2>
+
+                    <p> <strong><em>Lorem</em></strong> ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Diam volutpat commodo sed egestas. Sed vulputate mi
+                        sit amet mauris commodo quis imperdiet massa. Sit amet commodo nulla facilisi. </p>
+
+                    <a class="btn btn-secondary dark-button" href="#lorem-button" role="button">VAD - Lorem</a>
+
+                </div>
+                <!-- /.col-lg-4 -->
+
+                <div class="col-lg-4">
+
+                    <img class="small-image" src="https://image.freepik.com/free-vector/faith-hope-love-neon-sign-text-vector_118419-139.jpg">
+
+                    <h2>Användarbeteende</h2>
+
+                    <p>Lorem <strong><em>ipsum</em></strong> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Diam volutpat commodo sed egestas. Sed vulputate mi
+                        sit amet mauris commodo quis imperdiet massa. Sit amet commodo nulla facilisi.</p>
+
+                    <a class="btn btn-secondary dark-button" href="#ipsum-button" role="button">VEM - Ipsum</a>
+
+                </div>
+                <!-- /.col-lg-4 -->
+
+                <div class="col-lg-4">
+
+                    <img class="small-image" src="https://image.freepik.com/free-vector/red-friyay-neon-signboard-vector_53876-77838.jpg">
+
+                    <h2>Statistik</h2>
+
+                    <p>Lorem ipsum <strong><em>dolor</em></strong> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Diam volutpat commodo sed egestas. Sed vulputate mi
+                        sit amet mauris commodo quis imperdiet massa. Sit amet commodo nulla facilisi. </p>
+
+                    <a class="btn btn-secondary dark-button" href="#dolor-button" role="button">HUR - Dolor</a>
+
+                </div>
+                <!-- /.col-lg-4 -->
+
+            </div>
+            <!-- /.row -->
+
+            <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette spacing">
+
+                <div class="col-md-7">
+
+                    <h2 class="featurette-heading" id="lorem-button">Kampanjanalys<span class="text-muted"> - Vad händer online?</span></h2>
+
+                    <p class="lead"> <strong><em>Lorem</em></strong> ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Diam volutpat commodo sed egestas. Sed vulputate mi
+                        sit amet mauris commodo quis imperdiet massa. Sit amet commodo nulla facilisi. Turpis nunc eget lorem dolor sed viverra ipsum nunc. Accumsan lacus vel facilisis volutpat est velit egestas dui. Lobortis elementum nibh tellus molestie
+                        nunc non blandit massa. 
+ 						<ul>
+            				<li>Lorem ipsum dolor sit amet</li>
+            				<li>Consectetur adipiscing elit</li>
+            				<li>Ased do eiusmod tempor incididunt</li>
+        				</ul>
+
+                        - <em> Nibh nisl condimentum id venenatis a. Egestas quis ipsum suspendisse ultrices gravida. Mattis aliquam faucibus purus in massa tempor nec. Sagittis purus sit amet </em> - </p>
+                        <a href="mailto:hanna.laven@medieinstitutet.se?Subject=Kampanjanalys%20- Förfrågan" target="_top">Skicka förfrågan</a>
+                </div>
+
+                <div class="col-md-5">
+
+                    <img src="https://i.etsystatic.com/20336343/d/il/e81755/1941728259/il_340x270.1941728259_1353.jpg?version=0">
+
+                  
+
+                </div>
+
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette spacing">
+
+                <div class="col-md-7 order-md-2">
+
+                    <h2 class="featurette-heading" id="ipsum-button">Användarbeteende<span class="text-muted"> - Vem är din besökare?</span></h2>
+
+                    <p class="lead"><strong><em>Ipsum</em></strong> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Diam volutpat commodo sed egestas. Sed vulputate mi
+                        sit amet mauris commodo quis imperdiet massa. Sit amet commodo nulla facilisi. Turpis nunc eget lorem dolor sed viverra ipsum nunc. Accumsan lacus vel facilisis volutpat est velit egestas dui. Lobortis elementum nibh tellus molestie
+                        nunc non blandit massa. 
+ 						<ul>
+            				<li>Lorem ipsum dolor sit amet</li>
+            				<li>Consectetur adipiscing elit</li>
+            				<li>Ased do eiusmod tempor incididunt</li>
+        				</ul>
+
+                        - <em> Nibh nisl condimentum id venenatis a. Egestas quis ipsum suspendisse ultrices gravida. Mattis aliquam faucibus purus in massa tempor nec. Sagittis purus sit amet </em> - </p>
+                        <a href="mailto:hanna.laven@medieinstitutet.se?Subject=Användarbeteende%20- Förfrågan" target="_top">Skicka förfrågan</a>
+                </div>
+
+                <div class="col-md-5">
+
+                    <img src="https://image.freepik.com/free-vector/faith-hope-love-neon-sign-text-vector_118419-139.jpg">
+
+                    
+
+                </div>
+
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette spacing">
+
+                <div class="col-md-7">
+
+                    <h2 class="featurette-heading" id="dolor-button">Statistik<span class="text-muted"> - Hur summerar vi verkligheten?</span></h2>
+
+                    <p class="lead"><strong><em>Dolor</em></strong> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Diam volutpat commodo sed egestas. Sed vulputate mi
+                        sit amet mauris commodo quis imperdiet massa. Sit amet commodo nulla facilisi. Turpis nunc eget lorem dolor sed viverra ipsum nunc. Accumsan lacus vel facilisis volutpat est velit egestas dui. Lobortis elementum nibh tellus molestie
+                        nunc non blandit massa. 
+ 						<ul>
+            				<li>Lorem ipsum dolor sit amet</li>
+            				<li>Consectetur adipiscing elit</li>
+            				<li>Ased do eiusmod tempor incididunt</li>
+        				</ul>
+
+                        - <em> Nibh nisl condimentum id venenatis a. Egestas quis ipsum suspendisse ultrices gravida. Mattis aliquam faucibus purus in massa tempor nec. Sagittis purus sit amet </em> - </p>
+                        <a href="mailto:hanna.laven@medieinstitutet.se?Subject=Statistik%20- Förfrågan" target="_top">Skicka förfrågan</a>
+
+                </div>
+
+                <div class="col-md-5">
+
+                    <img src="https://image.freepik.com/free-vector/red-friyay-neon-signboard-vector_53876-77838.jpg">
+
+                    
+
+                </div>
+
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+
+        </div>
+        <!-- /.container -->
+
+        <!-- FOOTER -->
+
+        <footer class="container">
+
+            <p class="float-right"><a href="#">Back to top</a></p>
+
+            <p>&copy; 2019 Hanna Lavén &middot; Medieinstitutet, Stockholm <a href="mailto:hanna.laven@medieinstitutet.se?Subject=Hej%20jag önskar boka ett möte" target="_top">Kontakta mig</a></p> 
+                <!-- <a href="#1111">Privacy</a> &middot; <a href="#">Terms</a></p> -->
+
+        </footer>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+</body>
+
 </html>
 
